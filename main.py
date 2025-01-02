@@ -18,8 +18,16 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        # move player
+        player.update(dt)
+        
+        # add black background
         screen.fill('black')
+
+        # render player
         player.draw(screen)
+
+        # update screen
         pygame.display.flip()
 
         # work with fps
