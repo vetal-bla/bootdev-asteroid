@@ -50,6 +50,10 @@ def main():
             if obj.colliding(player):
                 print("Game over!")
                 sys.exit(0)
+            for bullet in shots:
+                if obj.colliding(bullet):
+                    obj.split()
+                    bullet.kill()
 
         # render objects
         for obj in drawable:
